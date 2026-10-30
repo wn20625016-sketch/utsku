@@ -1,0 +1,543 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Suci | tentang diri saya 🎀</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  background: #fff5f8;
+  color: #a64d72;
+  line-height: 1.8;
+}
+
+/* NAVIGATION */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255,228,237,.95);
+  backdrop-filter: blur(12px);
+  padding: 20px 7%;
+  box-shadow: 0 3px 15px rgba(220,130,165,.15);
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+nav a {
+  color: #bd557c;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: lowercase;
+  transition: .3s;
+}
+
+nav a:hover {
+  color: #ff69a4;
+}
+
+.empty {
+  flex: .3;
+}
+
+/* HERO SECTION */
+header {
+  padding: 80px 8%;
+  background: linear-gradient(
+    135deg,
+    #ffe0eb,
+    #fff5f8,
+    #ffcadd
+  );
+}
+
+.container {
+  max-width: 1150px;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.col-sm {
+  flex: 1;
+  min-width: 0;
+}
+
+header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(45px, 6vw, 75px);
+  line-height: 1.2;
+  color: #d65e91;
+  margin-bottom: 25px;
+}
+
+header ul {
+  list-style: none;
+  margin-bottom: 30px;
+}
+
+header ul li {
+  padding: 7px 0;
+  color: #95677b;
+  font-size: 15px;
+}
+
+header ul li::first-letter {
+  color: #ed83ad;
+}
+
+.button {
+  display: inline-block;
+  background: #ed83ad;
+  color: white;
+  padding: 13px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 13px;
+  box-shadow: 0 5px 15px #edbfd0;
+  transition: .3s;
+}
+
+.button:hover {
+  background: #d9578b;
+  transform: translateY(-5px);
+}
+
+figure {
+  text-align: center;
+}
+
+.intro-img {
+  width: 100%;
+  max-width: 390px;
+  height: 440px;
+  object-fit: cover;
+  border-radius: 180px 180px 30px 30px;
+  border: 8px solid white;
+  box-shadow: 0 10px 30px #edb6cb;
+}
+
+figcaption {
+  color: #b28b9b;
+  font-size: 11px;
+  margin-top: 12px;
+}
+
+/* SKILL SECTION */
+.skill-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  list-style: none;
+  padding: 55px 5%;
+  background: white;
+}
+
+.skill-list li {
+  background: #ffe5ee;
+  color: #c45c87;
+  padding: 12px 23px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 13px;
+  transition: .3s;
+}
+
+.skill-list li:hover {
+  background: #ed83ad;
+  color: white;
+  transform: translateY(-5px);
+}
+
+/* PROJECT SECTION */
+.project {
+  padding: 75px 8%;
+}
+
+.project.blue {
+  background: linear-gradient(
+    135deg,
+    #ffeaf1,
+    #fff8fb
+  );
+}
+
+.project .row {
+  gap: 65px;
+}
+
+.project figure img {
+  display: block;
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 25px;
+  border: 7px solid white;
+  box-shadow: 0 8px 25px #edbfd0;
+  transition: .4s;
+}
+
+.project figure img:hover {
+  transform: scale(1.03) rotate(-1deg);
+}
+
+.project h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(26px, 3vw, 38px);
+  line-height: 1.35;
+  color: #d65e91;
+  margin-bottom: 20px;
+}
+
+.project h2::before {
+  content: "♡ ";
+  color: #f48fb1;
+}
+
+.project p {
+  font-size: 14px;
+  color: #876b78;
+  margin-bottom: 25px;
+  text-align: justify;
+}
+
+.right-alignment {
+  text-align: right;
+}
+
+/* FOOTER */
+footer {
+  background: linear-gradient(
+    135deg,
+    #f3a4c0,
+    #dc6f9b
+  );
+  color: white;
+  text-align: center;
+  padding: 65px 20px;
+}
+
+footer h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 35px;
+  line-height: 1.5;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+}
+
+footer p {
+  margin-top: 20px;
+  font-size: 12px;
+  opacity: .85;
+}
+
+.heart {
+  display: inline-block;
+  animation: heartbeat 1s infinite;
+}
+
+@keyframes heartbeat {
+  50% {
+    transform: scale(1.3);
+  }
+}
+
+/* RESPONSIVE MOBILE */
+@media(max-width: 768px) {
+
+  nav ul {
+    gap: 15px;
+  }
+
+  .empty {
+    display: none;
+  }
+
+  header {
+    padding: 50px 7%;
+  }
+
+  .row {
+    flex-direction: column;
+    gap: 35px;
+  }
+
+  header .col-sm:first-child {
+    order: 1;
+  }
+
+  header .col-sm:last-child {
+    order: 2;
+  }
+
+  .intro-img {
+    height: 350px;
+  }
+
+  .project {
+    padding: 50px 7%;
+  }
+
+  .project .row {
+    gap: 30px;
+  }
+
+  .project .col-sm {
+    width: 100%;
+  }
+
+  .project figure img {
+    height: 270px;
+  }
+
+  .right-alignment {
+    text-align: left;
+  }
+
+  footer h2 {
+    font-size: 27px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+<ul>
+  <li><a href="#contact">contact ♡</a></li>
+  <li><a href="#works">works</a></li>
+  <li><a href="#experience">experience</a></li>
+  <li class="empty"></li>
+  <li><a href="profil.html">profile</a></li>
+  <li><a href="https://www.instagram.com/sucinurulaulya_?vrfl=MXg4bThyNG1xNWszcw=="
+    target="_blank" rel="noopener noreferrer">instagram</a></li>
+  <li>linkedin</li>
+</ul>
+</nav>
+
+<!-- HERO -->
+<header id="experience">
+<div class="container">
+<div class="row">
+
+<div class="col-sm">
+
+<h1>hi, i'm<br>Suci ♡</h1>
+
+<ul>
+<li>_ini project tugas mata kuliah web developmen</li>
+<li>_saat ini saya sedang menempuh pendidikan S1 Bisnis Digital</li>
+<li>_masih semester 3 kok wkwkwk</li>
+<li>_kenapa pink?gatau sebenarnya gasuka tapi lucu sih makanya temanya pink aja</li>
+<li>_cita citaku pengen kaya biar bisa ke swiss dan beli mobil JEEP i love jeep</li>
+</ul>
+
+<a href="#contact" class="button">
+AYO KEPO TENTANG AKU LEBIH JAUH  ♡
+</a>
+
+</div>
+
+<div class="col-sm">
+<figure>
+
+<img
+src="img/WhatsApp Image 2026-10-30 at 16.17.15.jpeg"
+class="intro-img"
+alt="Suci">
+
+<figcaption>
+photo by suci cantik anak baik
+</figcaption>
+
+</figure>
+</div>
+
+</div>
+</div>
+</header>
+
+<!-- SKILLS -->
+<section>
+<ul class="skill-list">
+
+<li>01_ mau kaya</li>
+<li>02_ cinta jeep sehidup semati</li>
+<li>03_ suka makan</li>
+<li>04_ suka masak</li>
+<li>05_ suka kamu mwehehehe</li>
+
+</ul>
+</section>
+
+<!-- PROJECT 1 -->
+<section class="project blue" id="works">
+<div class="container">
+<div class="row">
+
+<div class="col-sm">
+<figure>
+
+<img src="img/WhatsApp Image 2026-10-30 at 16.26.14.jpeg" alt="Cosmetics">
+
+<figcaption>
+Photo by mbah google
+</figcaption>
+
+</figure>
+</div>
+
+<div class="col-sm">
+
+<h2>
+Alasan kenapa secinta itu sama jeep
+</h2>
+
+<p>
+Saya sangat menyukai jeep karena memiliki desain yang gagah, keren, dan tangguh. Bagi saya, jeep bukan sekadar kendaraan, tetapi juga simbol kebebasan, keberanian, dan jiwa petualang. Saya suka melihat jeep melintasi berbagai medan, mulai dari jalan berbatu hingga pegunungan yang penuh tantangan. Ada daya tarik tersendiri ketika melihat jeep berjalan dengan gagah dan suara mesinnya yang khas. Bagi saya, menaiki jeep bukan hanya tentang perjalanan, tetapi juga tentang menikmati keindahan alam, merasakan keseruan petualangan, dan menciptakan kenangan yang tidak terlupakan. ❤️🚙
+</p>
+
+<a href="detail.html" class="button">
+klik ini biar lebih kenal ♡
+</a>
+
+</div>
+</div>
+</div>
+</section>
+
+<!-- PROJECT 2 -->
+<section class="project">
+<div class="container">
+<div class="row">
+
+<div class="col-sm right-alignment">
+
+<h2>
+aku juga suka masak dan makan 
+</h2>
+
+<p>
+Saya sangat menyukai memasak dan makan karena keduanya memberikan kebahagiaan tersendiri bagi saya. Bagi saya, memasak bukan hanya tentang mengolah bahan makanan menjadi hidangan yang lezat, tetapi juga tentang mencoba hal-hal baru dan mengekspresikan kreativitas. Saya senang bereksperimen dengan berbagai resep dan menciptakan makanan yang menggugah selera. Selain memasak, saya juga suka mencicipi berbagai jenis makanan, mulai dari makanan tradisional hingga makanan kekinian. Bagi saya, makanan bukan sekadar kebutuhan, tetapi juga sumber kebahagiaan yang bisa membuat suasana hati menjadi lebih baik. ❤️🍳🍜
+</p>
+
+<a href="detail2.html" class="button">
+ayo kesini! ♡
+</a>
+
+</div>
+
+<div class="col-sm">
+<figure>
+
+<img src="img/WhatsApp Image 2026-10-30 at 16.36.49.jpeg" alt="Dashboard App">
+
+<figcaption>
+Photo by mbah gpt
+</figcaption>
+
+</figure>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- PROJECT 3 -->
+<section class="project blue">
+<div class="container">
+<div class="row">
+
+<div class="col-sm">
+<figure>
+
+<img src="img/WhatsApp Image 2026-10-30 at 16.44.36.jpeg" alt="iPad App">
+
+<figcaption>
+Photo by ys studio
+</figcaption>
+
+</figure>
+</div>
+
+<div class="col-sm">
+
+<h2>
+untuk apa semua ini?
+</h2>
+
+<p>
+Saya membuat portofolio tentang diri saya untuk memperkenalkan siapa diri saya, mulai dari kepribadian, minat, hobi, hingga hal-hal yang saya sukai. Melalui portofolio ini, saya ingin menunjukkan sisi diri saya dengan cara yang kreatif dan menarik. Saya juga ingin menjadikan portofolio ini sebagai media untuk mengenal diri sendiri lebih baik, mengekspresikan kreativitas, serta menunjukkan kemampuan saya dalam membuat dan mendesain sebuah website. Selain itu, portofolio ini menjadi salah satu cara bagi saya untuk belajar mengembangkan keterampilan digital yang bermanfaat bagi masa depan, khususnya sebagai mahasiswa Bisnis Digital.
+</p>
+
+<a href="#" class="button">
+Read More ♡
+</a>
+
+</div>
+</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+
+<h2>
+Any Questions? ♡<br>
+Find Me Here
+</h2>
+
+<p>
+<a href="mailto:nurulauliasuci71@gmail.com">
+email@saya
+</a>
+</p>
+
+<p>
+Made with <span class="heart">♥</span>
+love suci 🎀
+</p>
+
+<p>
+Designed & Developed by suci nurul aulya 2026
+</p>
+
+</footer>
+
+</body>
+</html>
