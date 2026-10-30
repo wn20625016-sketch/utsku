@@ -1,0 +1,456 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bagian lain diri saya 🎀</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  background: #fff5f8;
+  color: #a64d72;
+  line-height: 1.8;
+}
+
+/* NAVIGATION */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: 20px;
+  background: rgba(255,228,237,.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 3px 15px #f5c4d5;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+nav a {
+  text-decoration: none;
+  color: #c45c87;
+  font-weight: 700;
+  transition: .3s;
+}
+
+nav a:hover {
+  color: #ff69a4;
+}
+
+/* MAIN CONTAINER */
+.project-container {
+  max-width: 1100px;
+  margin: 35px auto;
+  background: white;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 10px 35px #edb6cb;
+}
+
+/* HERO */
+.image-container {
+  position: relative;
+}
+
+.full-width-image {
+  width: 100%;
+  height: 460px;
+  object-fit: cover;
+  display: block;
+  filter: saturate(.8);
+}
+
+.image-container::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(126,55,88,.65),
+    rgba(126,55,88,.08)
+  );
+}
+
+.project-title {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 8%;
+  transform: translateY(-50%);
+  color: white;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(30px, 5vw, 55px);
+  line-height: 1.3;
+  text-shadow: 2px 3px 10px #754057;
+}
+
+.project-title::after {
+  content: " ♡";
+  color: #ffcadd;
+}
+
+/* BREADCRUMB */
+.breadcrumb {
+  padding: 18px 7%;
+  background: #ffeaf1;
+  font-size: 13px;
+  color: #9d7184;
+}
+
+.breadcrumb a {
+  color: #d65e91;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* PROJECT SECTIONS */
+.project {
+  padding: 55px 8%;
+}
+
+.project.blue {
+  background: linear-gradient(
+    135deg,
+    #fff0f5,
+    #fff8fb
+  );
+}
+
+.project h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
+  color: #d65e91;
+  margin-bottom: 20px;
+}
+
+.project h2::before {
+  content: "♡ ";
+  color: #f48fb1;
+}
+
+.project p {
+  color: #78636d;
+  margin-bottom: 15px;
+}
+
+.project ul {
+  padding-left: 25px;
+  color: #78636d;
+}
+
+.project li {
+  margin-bottom: 10px;
+}
+
+.project li::marker {
+  color: #e879a5;
+}
+
+/* SLIDER */
+.project-slider {
+  position: relative;
+  overflow: hidden;
+  border-radius: 25px;
+  box-shadow: 0 8px 25px #edbfd0;
+}
+
+.slider-toggle {
+  display: none;
+}
+
+.slider-container {
+  display: flex;
+  width: 300%;
+  transition: transform .6s ease;
+}
+
+.slider-slide {
+  width: 33.333%;
+  flex-shrink: 0;
+}
+
+.slider-slide img {
+  width: 100%;
+  height: 430px;
+  object-fit: cover;
+  display: block;
+}
+
+#slide1:checked ~ .slider-container {
+  transform: translateX(0);
+}
+
+#slide2:checked ~ .slider-container {
+  transform: translateX(-33.333%);
+}
+
+#slide3:checked ~ .slider-container {
+  transform: translateX(-66.666%);
+}
+
+.slider-controls {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  background: rgba(255,255,255,.8);
+  padding: 12px 16px;
+  border-radius: 30px;
+}
+
+.slider-dot {
+  width: 12px;
+  height: 12px;
+  background: #e9a9c0;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.slider-dot:hover {
+  background: #d65e91;
+  transform: scale(1.3);
+}
+
+#slide1:checked ~ .slider-controls label[for="slide1"],
+#slide2:checked ~ .slider-controls label[for="slide2"],
+#slide3:checked ~ .slider-controls label[for="slide3"] {
+  background: #d65e91;
+  transform: scale(1.2);
+}
+
+/* FOOTER */
+footer {
+  background: linear-gradient(
+    135deg,
+    #f3a4c0,
+    #dc6f9b
+  );
+  padding: 55px 20px;
+  color: white;
+  text-align: center;
+}
+
+footer h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+}
+
+footer p {
+  font-size: 13px;
+  opacity: .85;
+  margin-top: 15px;
+}
+
+.heart {
+  display: inline-block;
+  animation: beat 1s infinite;
+}
+
+@keyframes beat {
+  50% { transform: scale(1.3); }
+}
+
+/* RESPONSIVE */
+@media(max-width:600px) {
+  nav ul { gap: 12px; }
+  nav a { font-size: 12px; }
+
+  .project-container {
+    width: calc(100% - 20px);
+    margin: 15px auto;
+    border-radius: 20px;
+  }
+
+  .full-width-image { height: 330px; }
+
+  .project { padding: 40px 7%; }
+
+  .project h2 { font-size: 25px; }
+
+  .slider-slide img { height: 280px; }
+
+  footer h2 { font-size: 24px; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+<ul>
+  <li><a href="../index.html#contact">♡ Contact</a></li>
+  <li><a href="../index.html#works">♡ Works</a></li>
+  <li><a href="../index.html#experience">♡ Experience</a></li>
+  <li><a href="profil.html">♡ Profile</a></li>
+  <li><a href="https://www.instagram.com/sucinurulaulya_?vrfl=MXg4bThyNG1xNWszcw=="
+    target="_blank"
+    rel="noopener noreferrer">♡ instagram</a></li>
+  <li>♡ LinkedIn</li>
+</ul>
+</nav>
+
+<div class="project-container">
+
+<!-- HERO -->
+<div class="image-container">
+  <img
+    src="img/WhatsApp Image 2026-10-30 at 17.05.09.jpeg"
+    class="full-width-image"
+    alt="Dashboard App">
+
+  <h1 class="project-title">
+    dunia masak<br>
+    saya
+  </h1>
+</div>
+
+<div class="breadcrumb">
+  <a href="../index.html">Home</a>
+  / jelajahi hal lain yang saya sukai ♡
+</div>
+
+<!-- OVERVIEW -->
+<section class="project">
+  <h2>kenapa suka masak</h2>
+
+  <p>
+    Saya suka memasak karena bagi saya, memasak adalah salah satu cara untuk mengungkapkan perasaan. Melalui masakan, saya bisa menuangkan suasana hati, kreativitas, dan kasih sayang ke dalam setiap hidangan. Saat sedang bahagia, saya bisa mencoba resep baru, dan saat sedang sedih atau banyak pikiran, memasak menjadi cara bagi saya untuk menenangkan diri. Bagi saya, setiap masakan memiliki cerita dan perasaannya sendiri.
+  </p>
+</section>
+
+<!-- RESEARCH -->
+<section class="project blue">
+  <h2>suka masak apa aja sih</h2>
+
+  <p>ini dia:</p>
+
+  <ul>
+    <li>saya bisa buat kue </li>
+    <li>saya bisa masak makanan berat</li>
+    <li>saya bisa masak olahan daging dan lainnya</li>
+    <li>tenang aja sama saya kenyang kok janji ga keracunan</li>
+  </ul>
+</section>
+
+<!-- STRATEGY -->
+<section class="project">
+  <h2>saya juga suka makan</h2>
+
+  <p>masa suka masak gasuka makan yakan gamungkin:</p>
+
+  <ul>
+    <li>Saya suka makan masakan karena makanan bukan hanya tentang rasa, tetapi juga tentang kebahagiaan dan kenyamanan. Saya senang menikmati berbagai cita rasa, terutama masakan yang dibuat dengan penuh cinta. Bagi saya, makanan bisa memperbaiki suasana hati, memberikan energi, dan menjadi salah satu cara sederhana untuk menikmati hidup.</li>
+  </ul>
+</section>
+
+<!-- OUTCOMES -->
+<section class="project blue">
+  <h2>bosan kan?</h2>
+
+  <p>ya gimana inilah diriku memang membosankan:</p>
+
+  <ul>
+    <li>Terkadang aku merasa diriku membosankan karena tidak selalu pandai memulai percakapan atau menemukan hal menarik untuk diceritakan. Aku juga lebih nyaman menjadi diriku sendiri daripada memaksakan sesuatu agar terlihat menarik di mata orang lain. Namun, aku percaya bahwa setiap orang punya keunikan masing-masing, termasuk diriku, yang mungkin belum semua orang kenali.</li>
+  </ul>
+</section>
+
+<!-- GALLERY -->
+<section class="project">
+  <h2>Project Gallery 🎀</h2>
+
+  <div class="project-slider">
+
+    <input type="radio" name="slider"
+      id="slide1" class="slider-toggle" checked>
+
+    <input type="radio" name="slider"
+      id="slide2" class="slider-toggle">
+
+    <input type="radio" name="slider"
+      id="slide3" class="slider-toggle">
+
+    <div class="slider-container">
+
+      <div class="slider-slide">
+        <img src="img/WhatsApp Image 2026-10-30 at 17.21.47.jpeg"
+          alt="Dashboard Main Interface">
+      </div>
+
+      <div class="slider-slide">
+        <img src="img/WhatsApp Image 2026-10-30 at 17.27.57.jpeg"
+          alt="Dashboard Analytics">
+      </div>
+
+      <div class="slider-slide">
+        <img src="img/WhatsApp Image 2026-10-30 at 17.29.50.jpeg"
+          alt="Dashboard Mobile View">
+      </div>
+
+    </div>
+
+    <div class="slider-controls">
+      <label for="slide1" class="slider-dot"></label>
+      <label for="slide2" class="slider-dot"></label>
+      <label for="slide3" class="slider-dot"></label>
+    </div>
+
+  </div>
+</section>
+
+</div>
+
+<!-- FOOTER -->
+<footer id="contact">
+
+  <h2>
+    Interested in<br>
+    want to know more ♡
+  </h2>
+
+  <p>
+    <a href="mailto:nurulauliasuci71@gmail.com">
+      aulyaa@gmail.com
+    </a>
+  </p>
+
+  <p>
+    Made with <span class="heart">♥</span>
+    and pink magic 🎀
+  </p>
+
+  <p>
+    Designed & Developed by suci nurul aulya 2026
+  </p>
+
+</footer>
+
+</body>
+</html>
